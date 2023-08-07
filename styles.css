@@ -1,1 +1,65 @@
+/* styles.css */
 
+/* Resetando margens e preenchimentos padrão da lista */
+ul, ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Estilo para os itens da lista */
+li {
+  padding: 12px 20px;
+  border-bottom: 1px solid #e0e0e0;
+  position: relative;
+  transition: background-color 0.3s;
+}
+
+/* Mudando a cor de fundo e adicionando sombra ao passar o mouse sobre os itens */
+li:hover {
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo para uma lista ordenada */
+ol {
+  counter-reset: item; /* Reinicia o contador para listas ordenadas */
+  margin-left: 20px;
+}
+
+li::before {
+  content: counter(item);
+  counter-increment: item; /* Incrementa o contador para cada item */
+  background-color: #3f51b5;
+  color: white;
+  font-weight: bold;
+  width: 24px;
+  height: 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  margin-right: 12px;
+}
+
+/* Estilo para uma lista não ordenada */
+ul {
+  margin-left: 20px;
+}
+
+/* Estilo para subitens em listas aninhadas */
+li li {
+  padding: 8px 20px;
+  border-bottom: none;
+  margin-left: 20px;
+}
+
+/* Estilo para os links dentro dos itens da lista */
+li a {
+  text-decoration: none;
+  color: #333;
+}
+
+li a:hover {
+  color: #3f51b5;
+}

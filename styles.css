@@ -1,5 +1,14 @@
 body {
   font-family: Arial, sans-serif;
+  background-color: #f0f0f0; /* Cor de fundo */
+  padding: 20px; /* Espaçamento ao redor do conteúdo */
+}
+
+.restaurant-list {
+  background-color: #fff; /* Cor de fundo da lista de restaurantes */
+  border-radius: 10px; /* Cantos arredondados */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  padding: 20px; /* Espaçamento interno */
 }
 
 ul {
@@ -10,12 +19,24 @@ ul {
 li {
   display: flex;
   align-items: center;
-  margin-bottom: 10px;
+  margin-bottom: 20px; /* Mais espaço entre os itens */
 }
 
 img {
-  width: 50px;
-  height: 50px;
-  margin-right: 10px;
+  width: 70px; /* Tamanho da imagem aumentado */
+  height: 70px; /* Tamanho da imagem aumentado */
+  margin-right: 20px; /* Espaçamento à direita da imagem */
 }
 
+.restaurant-info {
+  flex: 1; /* Ocupa todo o espaço restante */
+}
+
+.restaurant-name {
+  font-weight: bold; /* Texto em negrito para o nome do restaurante */
+  font-size: 1.2rem; /* Tamanho da fonte aumentado */
+}
+
+.restaurant-logo {
+  border-radius: 50%; /* Transforma a imagem do logo em um círculo */
+}

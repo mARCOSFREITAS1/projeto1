@@ -1,56 +1,69 @@
-body{
+body {
     display: flex;
-    justify-content: center ; 
+    justify-content: center;
+    background-color: #141414; /* Dark background color */
+    color: #ffffff; /* Text color */
 }
 
-.Relatorio{
+.Relatorio {
     display: grid;
     font-family: Arial, sans-serif;
     border-style: groove;
-    border-color: #333;
+    border-color: #303030; /* Border color */
+    background-color: #1c1c1c; /* Light background color */
     width: 800px;
     text-align: center;
     padding-bottom: 20px;
 }
-.List{
+
+.List {
     display: flex;
     flex-direction: column;
     padding-right: 20px;
     list-style-position: inside;
 }
+
 .Titulo {
-    color: #333;
+    color: #00a8e1; /* Breaking Bad Blue */
 }
+
 .Subtitulo {
-    color: #666;
+    color: #ffc000; /* Breaking Bad Yellow */
 }
+
 p {
     margin-bottom: 10px;
 }
-.ImgsEstacao{
-    display: flex ;
-   justify-content: space-around;
+
+.ImgsEstacao {
+    display: flex;
+    justify-content: space-around;
 }
-img{
-   width: 350px;
-   height: 300px;
+
+img {
+    width: 350px;
+    height: 300px;
 }
+
 .carousel-container {
     width: 800px;
     margin: 0 auto;
     position: relative;
     overflow: hidden;
 }
+
 .carousel-wrapper {
     display: flex;
     transition: transform 0.3s ease-in-out;
 }
+
 .carousel-slide {
     flex: 0 0 100%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
 .carousel-img {
     display: flex;
     align-items: center;
@@ -60,11 +73,13 @@ img{
     max-height: 100%;
     cursor: pointer;
 }
+
 .carousel-nav {
     display: flex;
     justify-content: space-between;
     margin-top: 10px;
 }
+
 .carousel-nav button {
     background: none;
     border: none;
@@ -83,6 +98,7 @@ img{
     justify-content: center;
     align-items: center;
 }
+
 .lightbox img {
     width: 800px;
     height: 600px;

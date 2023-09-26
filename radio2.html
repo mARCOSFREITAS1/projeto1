@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Player de Música</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        #music-player {
+            text-align: center;
+        }
+        #audio-player {
+            width: 100%;
+            margin: 20px 0;
+        }
+        #controls {
+            display: flex;
+            justify-content: center;
+            margin: 10px 0;
+        }
+        .btn {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div id="music-player">
+        <audio id="audio-player" controls>
+            <source src="" type="audio/mp3">
+            Seu navegador não suporta o elemento de áudio.
+        </audio>
+        <div id="controls">
+            <button class="btn" id="prev-btn">&#9665; Anterior</button>
+            <button class="btn" id="next-btn">Próxima &#9655;</button>
+        </div>
+    </div>
+
+    <script>
+        const audioPlayer = document.getElementById('audio-player');
+        const prevButton = document.getElementById('prev-btn');
+        const nextButton = document.getElementById('next-btn');
+        const songs = [
+            'caminho_para_sua_musica_1.mp3',
+            'caminho_para_sua_musica_2.mp3',
+            'caminho_para_sua_musica_3.mp3',
+            'caminho_para_sua_musica_4.mp3',
+            'caminho_para_sua_musica_5.mp3',
+            'caminho_para_sua_musica_6.mp3',
+            'caminho_para_sua_musica_7.mp3',
+            'caminho_para_sua_musica_8.mp3',
+            'caminho_para_sua_musica_9.mp3',
+            'caminho_para_sua_musica_10.mp3',
+        ];
+        let currentSongIndex = 0;
+
+        function loadSong() {
+            audioPlayer.src = songs[currentSongIndex];
+        }
+
+        function playNextSong() {
+            currentSongIndex = (currentSongIndex + 1) % songs.length;
+            loadSong();
+            audioPlayer.play();
+        }
+
+        function playPrevSong() {
+            currentSongIndex = (currentSongIndex - 1 + songs.length) % songs.length;
+            loadSong();
+            audioPlayer.play();
+        }
+
+        nextButton.addEventListener('click', playNextSong);
+        prevButton.addEventListener('click', playPrevSong);
+
+        loadSong();
+    </script>
+</body>
+</html>

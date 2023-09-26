@@ -53,6 +53,10 @@
         button:hover {
             background-color: #1ed760;
         }
+
+        .playlist-controls {
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
@@ -75,11 +79,20 @@
             </div>
             <!-- Adicione mais músicas aqui -->
         </div>
+
+        <div class="playlist-controls">
+            <button id="previous">Anterior</button>
+            <button id="next">Próxima</button>
+        </div>
     </div>
 
     <script>
         const audioPlayer = document.querySelector('audio');
         const playPauseButton = document.querySelector('#play-pause');
+        const previousButton = document.querySelector('#previous');
+        const nextButton = document.querySelector('#next');
+        const playlistItems = document.querySelectorAll('.playlist-item');
+        let currentTrack = 0;
 
         playPauseButton.addEventListener('click', () => {
             if (audioPlayer.paused) {
@@ -90,6 +103,31 @@
                 playPauseButton.textContent = 'Play';
             }
         });
+
+        function playTrack(index) {
+            currentTrack = index;
+            const track = playlistItems[currentTrack];
+            const audioSource = track.querySelector('source').getAttribute('src');
+            const trackName = track.querySelector('span').textContent;
+
+            audioPlayer.src = audioSource;
+            audioPlayer.load();
+            audioPlayer.play();
+            playPauseButton.textContent = 'Pause';
+        }
+
+        previousButton.addEventListener('click', () => {
+            currentTrack = (currentTrack - 1 + playlistItems.length) % playlistItems.length;
+            playTrack(currentTrack);
+        });
+
+        nextButton.addEventListener('click', () => {
+            currentTrack = (currentTrack + 1) % playlistItems.length;
+            playTrack(currentTrack);
+        });
+
+        // Iniciar a primeira faixa ao carregar a página
+        playTrack(currentTrack);
     </script>
 </body>
 </html>
